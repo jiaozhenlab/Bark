@@ -1,7 +1,22 @@
+## About this fork
+
+This is my personal fork of Finb/Bark (MIT licensed — all credit for the original app goes to Finb and contributors).
+
+I'm adapting it into the push client for my own automation stack:
+- alerts from my home servers and VPS fleet
+- missed-call notifications forwarded from my home Mac
+- pings from scheduled jobs and media pipelines
+
+Planned changes: pre-configured self-hosted server setup, a cleaned-up onboarding for personal deployments, and renamed branding for my own build. The goal is a dependable, fully self-hosted push path with no third-party dependency.
+
+— Haitao Zhang (JiaozhenLab)
+
+---
+
 English | **[中文](README.zh.md)** | **[日本語](README.ja.md)**
 ## Bark
 Bark is a push notification tool app. It's free, simple, and secure, leveraging APNs without draining device battery.<br/>
-Bark supports many advanced features of iOS notifications, including notification grouping, custom push icons, sounds, time-sensitive notifications, critical alerts, and more.<br/> 
+Bark supports many advanced features of iOS notifications, including notification grouping, custom push icons, sounds, time-sensitive notifications, critical alerts, and more.<br/>
 Additionally, Bark supports self-hosted servers and offers encrypted push notifications to ensure privacy and security. <br/>
 
 ## Download
@@ -25,22 +40,23 @@ Additionally, Bark supports self-hosted servers and offers encrypted push notifi
 You can send GET or POST requests, and you'll receive a push notification immediately upon success.
 
 URL structure: The first part is the key, followed by three matches
-/:key/:body 
-/:key/:title/:body 
-/:key/:title/:subtitle/:body 
+/:key/:body
+/:key/:title/:body
+/:key/:title/:subtitle/:body
 
-title: The push title, slightly larger than the body text 
+title: The push title, slightly larger than the body text
 subtitle: The push subtitle
-body: The push content, use the newline character '\n' for line breaks 
+body: The push content, use the newline character '\n' for line breaks
 For POST requests, the parameter names are the same as above
 ```
 
 ## Parameters
+The optional URL parameters are described below:
 
 * url
 ```
 // Click on the push notification to jump to the specified URL
-https://api.day.app/yourkey/url?url=https://www.google.com 
+https://api.day.app/yourkey/url?url=https://www.google.com
 ```
 * group
 ```
@@ -72,9 +88,9 @@ https://api.day.app/yourkey/ciphertext?ciphertext=
 // Set time-sensitive notifications
 https://api.day.app/yourkey/时效性通知?level=timeSensitive
 
-// Optional values 
-// active: Default value when not set, the system will immediately display the notification by lighting up the screen. 
-// timeSensitive: Time-sensitive notification, can be displayed during focus mode. 
+// Optional values
+// active: Default value when not set, the system will immediately display the notification by lighting up the screen.
+// timeSensitive: Time-sensitive notification, can be displayed during focus mode.
 // passive: Adds notification to the notification list without lighting up the screen.
 ```
 * Critical alerts
@@ -94,7 +110,7 @@ Critical alerts will ignore silent and do not disturb modes, always playing the 
 - [Quicker Actions](https://getquicker.net/Sharedaction?code=e927d844-d212-4428-758d-08d69de12a3b)
 - [Bark for Wox](https://github.com/Zeroto521/Wox.Plugin.Bark)
 - [bark-jssdk](https://github.com/afeiship/bark-jssdk)
-- [bark.js](https://github.com/skyhancloud/bark.js)
+- [bark.js](https://github.com/skyniancloud/bark.js)
 - [java-bark-server](https://gitee.com/hotlcc/java-bark-server)
 - [bark-java-sdk](https://github.com/MoshiCoCo/bark-java-sdk)
 - [Python for Bark](https://github.com/funny-cat-happy/barknotificator)
